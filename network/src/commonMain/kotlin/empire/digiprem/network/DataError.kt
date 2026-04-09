@@ -1,10 +1,10 @@
 package empire.digiprem.network
 
-import corelib.network.generated.resources.Res
-import corelib.network.generated.resources.error_disk_full
+
+
+
 import empire.digiprem.shared.util.ResultError
 import empire.digiprem.shared.util.UiText
-
 sealed interface DataError : ResultError {
 
     sealed interface Remote : DataError {

@@ -117,3 +117,8 @@ kotlin {
     }
 
 }
+compose.resources {
+    publicResClass = false
+    packageOfResClass = "empire.digiprem.network"
+    generateResClass = auto
+}
