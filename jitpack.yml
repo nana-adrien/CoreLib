@@ -1,2 +1,5 @@
 jdk:
   - openjdk21
+  -
+install:
+  - ./gradlew publishToMavenLocal -Pgroup=com.github.nana-adrien

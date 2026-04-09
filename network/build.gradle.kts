@@ -17,9 +17,6 @@ afterEvaluate {
             kotlinMultiplatformPub.artifactId = "digi-lib-network-core"
             kotlinMultiplatformPub.version = "1.0"
 
-            repositories {
-                mavenLocal()
-            }
         }
     }}
 kotlin {
