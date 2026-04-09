@@ -1,3 +1,6 @@
+import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidKotlinMultiplatformLibrary)
@@ -38,31 +41,27 @@ kotlin {
         }
     }
 
-    // For iOS targets, this is also where you should
-    // configure native binary output. For more information, see:
-    // https://kotlinlang.org/docs/multiplatform-build-native-binaries.html#build-xcframeworks
-
-    // A step-by-step guide on how to include this library in an XCode
-    // project can be found here:
-    // https://developer.android.com/kotlin/multiplatform/migrate
-    val xcfName = "notificationKit"
-
-    iosX64 {
-        binaries.framework {
-            baseName = xcfName
+    listOf(
+        iosArm64(),
+        iosSimulatorArm64()
+    ).forEach { iosTarget ->
+        iosTarget.binaries.framework {
+            baseName = "ComposeApp"
+            isStatic = true
         }
     }
 
-    iosArm64 {
-        binaries.framework {
-            baseName = xcfName
-        }
+    jvm()
+
+    js {
+        browser()
+        binaries.executable()
     }
 
-    iosSimulatorArm64 {
-        binaries.framework {
-            baseName = xcfName
-        }
+    @OptIn(ExperimentalWasmDsl::class)
+    wasmJs {
+        browser()
+        binaries.executable()
     }
 
     // Source set declarations.
