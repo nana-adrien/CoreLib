@@ -8,7 +8,8 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import empire.digiprem.corelib.util.UiText
+import empire.digiprem.corelib.util.asString
+import empire.digiprem.shared.util.UiText
 
 
 @Composable

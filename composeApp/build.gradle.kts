@@ -65,10 +65,12 @@ kotlin {
         }
         commonMain.dependencies {
             implementation(projects.network)
+            implementation(projects.shared)
 
             implementation(libs.compose.runtime)
             implementation(libs.compose.foundation)
             implementation(libs.compose.material3)
+            implementation(libs.material3.adaptative)
             implementation(libs.compose.ui)
             implementation(libs.compose.components.resources)
             implementation(libs.compose.uiToolingPreview)

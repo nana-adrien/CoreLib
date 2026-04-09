@@ -2,6 +2,8 @@ import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
+    alias(libs.plugins.composeMultiplatform)
+    alias(libs.plugins.composeCompiler)
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidKotlinMultiplatformLibrary)
     alias(libs.plugins.androidLint)
@@ -75,6 +77,8 @@ kotlin {
                 implementation(libs.kotlin.stdlib)
                 implementation(projects.shared)
                 implementation(libs.ktor.client.core)
+                implementation(compose.components.resources)
+
                 // Add KMP dependencies here
             }
         }
