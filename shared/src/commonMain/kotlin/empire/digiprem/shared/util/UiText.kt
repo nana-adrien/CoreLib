@@ -3,6 +3,7 @@ package empire.digiprem.shared.util
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.getString
 
+
 sealed interface UiText {
     data class DynamicString(val value: String): UiText
     data class Resource(val id: StringResource, val args: Array<Any> = emptyArray()): UiText

@@ -70,6 +70,7 @@ kotlin {
                 implementation(libs.kotlin.stdlib)
                 implementation(libs.compose.runtime)
                 implementation(libs.compose.foundation)
+                implementation(libs.compose.components.resources)
                 // Add KMP dependencies here
             }
         }

@@ -77,7 +77,10 @@ kotlin {
                 implementation(libs.kotlin.stdlib)
                 implementation(projects.shared)
                 implementation(libs.ktor.client.core)
-                implementation(compose.components.resources)
+                implementation(libs.compose.runtime)
+                implementation(libs.compose.foundation)
+                implementation(libs.compose.components.resources)
+                // Add KMP dependencies here
 
                 // Add KMP dependencies here
             }
