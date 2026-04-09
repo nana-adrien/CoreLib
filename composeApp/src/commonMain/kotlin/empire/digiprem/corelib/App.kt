@@ -14,8 +14,8 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.github.nana_adrien.composeapp.generated.resources.Res
-import com.github.nana_adrien.composeapp.generated.resources.compose_multiplatform
+import corelib.composeapp.generated.resources.Res
+import corelib.composeapp.generated.resources.compose_multiplatform
 import org.jetbrains.compose.resources.painterResource
 
 

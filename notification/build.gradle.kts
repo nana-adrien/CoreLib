@@ -5,8 +5,8 @@ plugins {
     id("maven-publish")
 }
 // Provide coordinates for your artifact
-group = "com.github.nana-adrien"
-version = "0.0.2"
+//group = "com.github.nana-adrien"
+//version = "0.0.2"
 afterEvaluate {
     publishing {
         publications {
@@ -16,10 +16,6 @@ afterEvaluate {
             kotlinMultiplatformPub.groupId = "com.github.nana-adrien"
             kotlinMultiplatformPub.artifactId = "digi-lib-notification"
             kotlinMultiplatformPub.version = "1.0"
-
-            repositories {
-                mavenLocal()
-            }
         }
     }}
 kotlin {
