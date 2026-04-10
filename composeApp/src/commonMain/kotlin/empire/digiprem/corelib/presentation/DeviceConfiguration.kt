@@ -4,6 +4,7 @@ import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
 import androidx.compose.runtime.Composable
 import androidx.window.core.layout.WindowSizeClass
 import androidx.window.core.layout.WindowSizeClass.Companion.WIDTH_DP_MEDIUM_LOWER_BOUND
+import androidx.window.core.layout.WindowWidthSizeClass
 import kotlin.math.min
 
 
@@ -25,10 +26,36 @@ enum class DeviceConfiguration{
     companion object{
 
         fun fromWindowsSizeClass(windowSizeClass: WindowSizeClass): DeviceConfiguration{
+
+                val width = windowSizeClass.windowWidthSizeClass
+                val isLandscape = windowSizeClass.minWidthDp > windowSizeClass.minHeightDp
+
+                return when (width) {
+                    WindowWidthSizeClass.COMPACT -> {
+                        if (isLandscape) DeviceConfiguration.MOBILE_LANDSCAPE
+                        else DeviceConfiguration.MOBILE_PORTRAIT
+                    }
+
+                    WindowWidthSizeClass.MEDIUM -> {
+                        if (isLandscape) DeviceConfiguration.TABLET_LANDSCAPE
+                        else DeviceConfiguration.TABLET_PORTRAIT
+                    }
+
+                    WindowWidthSizeClass.EXPANDED -> {
+                        DeviceConfiguration.DESKTOP
+                    }
+
+                    else -> DeviceConfiguration.MOBILE_PORTRAIT
+                }
+
+           /*
             return with(windowSizeClass){
-                val smallestSideDp= min(minWidthDp, minHeightDp)
-                val isTablet=smallestSideDp>= WIDTH_DP_MEDIUM_LOWER_BOUND
-                val isLandscape=minWidthDp>minHeightDp
+               // val smallestSideDp= min(minWidthDp, minHeightDp)
+              //  val isTablet=smallestSideDp>= WIDTH_DP_MEDIUM_LOWER_BOUND
+                val isTablet = isWidthAtLeastBreakpoint(Medium)
+                val isDesktop = isWidthAtLeastBreakpoint(WindowSizeClassBreakpoint.Expanded)
+
+                val isLandscape = minWidthDp > minHeightDp
 
                 when{
                     !isTablet && !isLandscape-> DeviceConfiguration.MOBILE_PORTRAIT
@@ -37,7 +64,7 @@ enum class DeviceConfiguration{
                     isTablet && isLandscape -> DeviceConfiguration.TABLET_LANDSCAPE
                     else -> DeviceConfiguration.DESKTOP
                 }
-            }
+            }*/
         }
     }
 
