@@ -26,6 +26,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.window.DialogProperties
 import empire.digiprem.corelib.presentation.currentDeviceConfigure
 import empire.digiprem.corelib.design_system.components.bottom_sheet.DigiTaskBottomSheet
 import empire.digiprem.corelib.design_system.components.dialogs.DigiTaskDialog
@@ -102,6 +103,7 @@ fun DialogSheetAdaptiveLayout(
     dialogShape: Shape = RoundedCornerShape(size = 28.dp),
     bottomSheetShape: Shape = BottomSheetDefaults.ExpandedShape,
     contentWindowInsets: @Composable (() -> WindowInsets) ={ BottomSheetDefaults.windowInsets},
+    properties: DialogProperties = DialogProperties(),
     containerColor: Color = MaterialTheme.colorScheme.surface,
     onDismiss: () -> Unit = {},
     content: @Composable ColumnScope.() -> Unit
@@ -139,6 +141,7 @@ fun DialogSheetAdaptiveLayout(
                 shape = dialogShape,
                 dismissOnOutsideClick = dismissOnOutsideClick,
                 containerColor=containerColor,
+                properties=properties,
                 modifier = modifier,
                 onDismiss = onDismiss,
                 content = { content() }

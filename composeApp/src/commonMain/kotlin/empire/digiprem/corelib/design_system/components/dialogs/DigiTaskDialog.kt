@@ -20,6 +20,7 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
+import androidx.compose.ui.window.DialogProperties
 
 @Composable
 fun DigiTaskDialog(
@@ -27,10 +28,12 @@ fun DigiTaskDialog(
     onDismiss: () -> Unit,
     modifier: Modifier = Modifier,
     shape: Shape = RoundedCornerShape(size = 28.dp),
+    properties: DialogProperties = DialogProperties(),
     containerColor: Color = MaterialTheme.colorScheme.surface,
     content: @Composable ColumnScope.() -> Unit
 ) {
     Dialog(
+        properties=properties,
         onDismissRequest = {
             if (dismissOnOutsideClick) {
                 onDismiss()
@@ -47,7 +50,9 @@ fun DigiTaskDialog(
         )
     }
 }
-
+/*
+@Composable
+internal expect fun PlatformDigiTaskDialog()*/
 
 @Composable
 private fun DigiTaskDialogPreview() {
