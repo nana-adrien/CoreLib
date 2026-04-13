@@ -32,9 +32,6 @@ fun DigiTaskDialog(
     containerColor: Color = MaterialTheme.colorScheme.surface,
     content: @Composable ColumnScope.() -> Unit
 ) {
-    Dialog(onDismiss){
-
-    }
     PlatformDigiTaskDialog(
         properties=properties,
         onDismissRequest = {
