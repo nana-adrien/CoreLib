@@ -33,7 +33,7 @@ fun DigiTaskDialog(
     content: @Composable ColumnScope.() -> Unit
 ) {
     Dialog(onDismiss){
-        
+
     }
     PlatformDigiTaskDialog(
         properties=properties,
