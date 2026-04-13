@@ -1,4 +1,4 @@
-package empire.digiprem.digi_task.core.design_system.components.menu
+package empire.digiprem.corelib.design_system.components.menu
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Archive
@@ -13,8 +13,6 @@ import androidx.compose.material.icons.filled.Security
 import androidx.compose.material.icons.filled.Send
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.Visibility
-import empire.digiprem.corelib.design_system.components.menu.NestedMenuItem
-import empire.digiprem.corelib.design_system.components.menu.NestedMenuItemId
 
 
 sealed interface NestedMenuItemIdId: NestedMenuItemId {

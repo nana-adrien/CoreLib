@@ -64,7 +64,7 @@ kotlin {
             implementation(libs.androidx.activity.compose)
         }
         commonMain.dependencies {
-            implementation(projects.network)
+           // implementation(projects.network)
             implementation(projects.shared)
 
             implementation(libs.compose.runtime)
