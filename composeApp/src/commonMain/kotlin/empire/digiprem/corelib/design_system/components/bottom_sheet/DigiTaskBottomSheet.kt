@@ -40,6 +40,7 @@ fun DigiTaskBottomSheet(
     shape: Shape =  BottomSheetDefaults.ExpandedShape,
     containerColor: Color= MaterialTheme.colorScheme.surface,
     enabledExpendedContent: Boolean = false,
+    contentWindowInsets: @Composable (() -> WindowInsets) ={ BottomSheetDefaults.windowInsets},
     onDismiss: () -> Unit,
     content: @Composable ColumnScope.() -> Unit
 ) {
@@ -71,7 +72,7 @@ fun DigiTaskBottomSheet(
         shape=shape,
         containerColor = containerColor,
         modifier = modifier.fillMaxSize(),
-        contentWindowInsets = { WindowInsets.navigationBars },
+        contentWindowInsets = contentWindowInsets,
         content =content
     )
 

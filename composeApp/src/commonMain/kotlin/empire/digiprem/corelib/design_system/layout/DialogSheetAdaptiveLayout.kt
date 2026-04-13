@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -100,6 +101,7 @@ fun DialogSheetAdaptiveLayout(
     modifier: Modifier = Modifier,
     dialogShape: Shape = RoundedCornerShape(size = 28.dp),
     bottomSheetShape: Shape = BottomSheetDefaults.ExpandedShape,
+    contentWindowInsets: @Composable (() -> WindowInsets) ={ BottomSheetDefaults.windowInsets},
     containerColor: Color = MaterialTheme.colorScheme.surface,
     onDismiss: () -> Unit = {},
     content: @Composable ColumnScope.() -> Unit
@@ -119,6 +121,7 @@ fun DialogSheetAdaptiveLayout(
                 dismissOnOutsideClick = dismissOnOutsideClick,
                 modifier = modifier,
                 containerColor=containerColor,
+                contentWindowInsets=contentWindowInsets,
                 enabledExpendedContent = enabledMobileExpendedContent,
                 onDismiss = {
                     showBottomSheet = false
