@@ -147,7 +147,7 @@ fun DialogSheetAdaptiveLayout(
 
 
 @Composable
-fun DialogSheetAdaptiveLayoutPreview(
+private fun DialogSheetAdaptiveLayoutPreview(
     visibility: Boolean = true,
     canDismissibleChange: () -> Unit = {},
     onDismiss: () -> Unit = {},

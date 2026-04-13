@@ -20,6 +20,7 @@ runner = "1.7.0"
 core = "1.7.0"
 ktor="3.2.3"
 
+material-icon = "1.7.3"
 material3-adaptative="1.2.0"
 
 [libraries]
@@ -57,6 +58,10 @@ ktor-client-js = {module="io.ktor:ktor-client-core-js",version.ref="ktor"}
 # Material3 Adaptative
 
 material3-adaptative={module="org.jetbrains.compose.material3.adaptive:adaptive",version.ref="material3-adaptative"}
+# Material Icon
+
+material-icons-core= { module = "org.jetbrains.compose.material:material-icons-extended", version.ref = "material-icon" }
+material-icons-extended= { module = "org.jetbrains.compose.material:material-icons-extended", version.ref = "material-icon" }
 
 
 
