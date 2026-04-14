@@ -67,6 +67,7 @@ fun DigiTaskBottomSheet(
     }
 
     ModalBottomSheet(
+        sheetGesturesEnabled = enabledExpendedContent,
         onDismissRequest = { onDismiss() },
         sheetState = sheetState,
         shape=shape,
